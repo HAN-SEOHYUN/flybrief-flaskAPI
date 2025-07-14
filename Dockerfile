@@ -2,9 +2,9 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Flask 직접 설치
+RUN pip install flask
 
-COPY . .
+COPY app.py .
 
 CMD ["python", "app.py"]
